@@ -9,4 +9,4 @@ export const addressTable = sqliteTable("address", {
   state: text().notNull(),
 }, (table) => [
   check("state_length_check", sql`length(${table.state}) = 2`),
-])
+]);

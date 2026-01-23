@@ -1,14 +1,6 @@
 import { ipcMain } from 'electron';
-import { db, usersTable } from '..';
+import { db, User, usersTable } from '..';
 import { eq } from 'drizzle-orm';
-
-export interface User {
-    id?: number;
-    firstName: string;
-    lastName: string;
-    email: string;
-    admin: boolean;
-}
 
 export const setupDataApi = () => {
     ipcMain.on("insert-user", (_event, user: User) => {

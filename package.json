@@ -6,6 +6,7 @@
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
+    "schema-push": "drizzle-kit push",
     "test": "vitest",
     "test-ui": "playwright test",
     "package": "electron-forge package",
