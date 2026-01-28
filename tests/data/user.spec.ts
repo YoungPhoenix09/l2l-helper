@@ -2,10 +2,11 @@ import { eq } from 'drizzle-orm'
 import { afterAll, expect, describe, beforeEach, test } from 'vitest'
 import { db, usersTable } from '../../src/data';
 import { testUser } from './testData';
+import { cleanup } from './utils';
 
 describe('user db operations', async () => {
   beforeEach(async () => {
-    db.delete(usersTable).execute();
+    await cleanup();
   });
 
   test('db can insert and find user', async () => {
@@ -27,6 +28,6 @@ describe('user db operations', async () => {
   });
 
   afterAll(async () => {
-    db.delete(usersTable).execute();
+    await cleanup();
   });
 });

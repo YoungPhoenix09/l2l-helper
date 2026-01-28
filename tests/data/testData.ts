@@ -1,4 +1,4 @@
-import { Address, User } from "src/data";
+import { Address, Participant, User } from "src/data";
 
 export const testUser: User = {
   id: null,
@@ -13,4 +13,11 @@ export const testAddress: Address = {
   addressLine1: "123 Magic Rd",
   city: "Orlando",
   state: "FL"
+}
+
+export const testParticipant: Participant = {
+  dob: new Date(2006, 7, 19),
+  gender: "m",
+  addressId: null,
+  userId: null,
 }

@@ -5,7 +5,7 @@ import { addressTable, usersTable } from "..";
 export const participantsTable = sqliteTable("participants", {
   id: integer({ mode: 'number' }).primaryKey({ autoIncrement: true }),
   userId: integer("user_id").references(() => usersTable.id),
-  dob: integer<"timestamp">(),
+  dob: integer("dob", { mode: "timestamp"}),
   gender: text().notNull(),
   addressId: integer("address_id").references(() => addressTable.id)
 }, (table) => [

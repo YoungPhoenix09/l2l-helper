@@ -2,10 +2,11 @@ import { eq } from 'drizzle-orm'
 import { afterAll, expect, describe, beforeEach, test } from 'vitest'
 import { db, addressTable } from '../../src/data';
 import { testAddress } from './testData';
+import { cleanup } from './utils';
 
 describe('address db operations', async () => {
   beforeEach(async () => {
-    db.delete(addressTable).execute();
+    await cleanup();
   });
 
   test('db can insert and find address', async () => {
@@ -43,6 +44,6 @@ describe('address db operations', async () => {
   });
 
   afterAll(async () => {
-    db.delete(addressTable).execute();
+    await cleanup();
   });
 });
